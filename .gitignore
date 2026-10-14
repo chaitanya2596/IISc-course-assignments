@@ -1,0 +1,20 @@
+# compiled programs
+*.o
+NSDE_DS289/*/*/numericalSolver
+NSDE_DS289/*/*/springMassDamper
+NSDE_DS289/*/*/solution
+NSDE_DS289/*/*/tdma
+NSDE_DS289/*/*/heat
+NSDE_DS289/*/*/diffusion
+NSDE_DS289/*/*/implicitDiffusion
+NSDE_DS289/*/*/burgersEquation
+Parallel_Programming/Assignment1_matrix_multiplication_mpi/cannon
+Parallel_Programming/Assignment1_matrix_multiplication_mpi/summa
+Parallel_Programming/Assignment1_matrix_multiplication_mpi/seq_matmul
+Parallel_Programming/Assignment1_matrix_multiplication_mpi/Mat_generator
+# large or regenerated data
+*.bin
+slurm_*
+# profiler raw files (large); the CSV summaries are kept
+*.nsys-rep
+*.sqlite

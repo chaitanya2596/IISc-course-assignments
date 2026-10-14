@@ -1,0 +1,16 @@
+#x bound starting from 
+2
+#x bound end at 
+3
+#y bound starting from 
+4
+#y bound end at 
+6
+#number of point in x
+128
+#number of points in y
+256
+#right dirchlet's boundary condition
+60
+#left dirchlet's boundary condition
+30

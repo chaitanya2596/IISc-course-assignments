@@ -1,0 +1,2 @@
+source,reachable_nodes,max_distance,seq_ms,gpu_ms,gpu_ms_with_result_copy,speedup,buckets,light_launches,total_launches,correct
+1,1957027,48807,245.008,39.64,40.787,6.18083,10,878,899,yes

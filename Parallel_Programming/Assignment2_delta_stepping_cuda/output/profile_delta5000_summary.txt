@@ -1,0 +1,24 @@
+Generating SQLite file output/profile_delta5000.sqlite from output/profile_delta5000.nsys-rep
+Processing [output/profile_delta5000.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+96.6,16146300,878,18389.9,18400.0,8032,28096,5272.3,"lightEdgesKernel(int *, int *, int *, const int *, const int *, const int *, const int *, int, int, int, int *)"
+2.7,453473,10,45347.3,48064.0,33568,49600,5909.1,"nextBucketKernel(const int *, int, int *)"
+0.6,105856,10,10585.6,11136.0,8320,11840,1368.1,"heavyEdgesKernel(int *, int *, const int *, const int *, const int *, const int *, const int *, int, int, int)"
+0.1,14881,1,14881.0,14881.0,14881,14881,0.0,"distanceInitialization(int *, int *, int *, int, int)"
+
+Processing [output/profile_delta5000.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+73.4,127486919,8,15935864.9,75610.0,67601,126943868,44854008.3,cudaMalloc
+20.6,35806197,903,39652.5,31250.0,12090,1895334,101718.7,cudaMemcpy
+3.9,6740247,899,7497.5,4650.0,4510,2428854,80855.8,cudaLaunchKernel
+1.7,2898447,878,3301.2,3240.0,3110,14270,527.3,cudaMemset
+0.5,804952,8,100619.0,76545.0,65140,272231,69789.8,cudaFree
+0.0,48940,2,24470.0,24470.0,5210,43730,27237.8,cudaDeviceSynchronize
+0.0,1360,1,1360.0,1360.0,1360,1360,0.0,cuModuleGetLoadingMode
+
+Processing [output/profile_delta5000.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+59.1,5114874,14,365348.1,1024.0,1024,1803145,658271.0,[CUDA memcpy Host-to-Device]
+30.2,2612715,889,2938.9,1696.0,1664,1098534,36786.5,[CUDA memcpy Device-to-Host]
+10.7,922851,878,1051.1,1024.0,992,1152,47.1,[CUDA memset]
+

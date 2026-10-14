@@ -1,0 +1,9 @@
+sssp
+sssp_seq
+input/test_graph.mtx
+output/slurm_*
+output/dbg_*
+output/.lastjob
+profdbg_*
+profile_[0-9]*
+stress_[0-9]*

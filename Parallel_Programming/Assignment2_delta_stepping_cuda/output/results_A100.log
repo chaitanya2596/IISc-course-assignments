@@ -1,0 +1,175 @@
+make: 'sssp' is up to date.
+NVIDIA A100 80GB PCIe, 81920 MiB
+===== small test graphs =====
+Reading input/testCase_3.mtx
+nodes = 4, undirected edges = 1, stored (directed) edges = 2, delta = 65
+graph copied to the GPU in 202.184 ms (done once)
+
+source 0: reachable nodes = 2, largest distance = 64
+   sequential delta-stepping : 0.002 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 2.173 ms   (2.183 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 0.000920387   buckets = 1, light-edge launches = 3, all kernel launches = 6   CORRECT
+
+ALL SOURCES CORRECT
+Reading input/testCase_5.mtx
+nodes = 6, undirected edges = 6, stored (directed) edges = 12, delta = 51
+graph copied to the GPU in 174.213 ms (done once)
+
+source 0: reachable nodes = 5, largest distance = 116
+   sequential delta-stepping : 0.001 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 1.679 ms   (1.69 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 0.000595593   buckets = 3, light-edge launches = 8, all kernel launches = 15   CORRECT
+
+ALL SOURCES CORRECT
+Reading input/testCase_8.mtx
+nodes = 9, undirected edges = 12, stored (directed) edges = 24, delta = 27
+graph copied to the GPU in 168.888 ms (done once)
+
+source 0: reachable nodes = 8, largest distance = 69
+   sequential delta-stepping : 0.001 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 1.704 ms   (1.715 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 0.000586854   buckets = 3, light-edge launches = 8, all kernel launches = 15   CORRECT
+
+ALL SOURCES CORRECT
+Reading input/testCase_10.mtx
+nodes = 11, undirected edges = 25, stored (directed) edges = 50, delta = 42
+graph copied to the GPU in 174.878 ms (done once)
+
+source 0: reachable nodes = 10, largest distance = 81
+   sequential delta-stepping : 0.002 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 1.754 ms   (1.764 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 0.00114025   buckets = 2, light-edge launches = 8, all kernel launches = 13   CORRECT
+
+ALL SOURCES CORRECT
+===== large graph, delta = average edge weight + 1 =====
+Reading input/test_graph.mtx
+nodes = 1957028, undirected edges = 2760388, stored (directed) edges = 5520776, delta = 101
+graph copied to the GPU in 247.686 ms (done once)
+
+source 1: reachable nodes = 1957027, largest distance = 48807
+   sequential delta-stepping : 141.425 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 128.217 ms   (129.31 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.10301   buckets = 483, light-edge launches = 3192, all kernel launches = 4159   CORRECT
+source 500: reachable nodes = 1957027, largest distance = 49960
+   sequential delta-stepping : 141.443 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 129.343 ms   (131.213 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.09355   buckets = 495, light-edge launches = 3276, all kernel launches = 4267   CORRECT
+source 1000: reachable nodes = 1957027, largest distance = 48448
+   sequential delta-stepping : 143.497 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 124.599 ms   (125.691 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.15167   buckets = 478, light-edge launches = 3155, all kernel launches = 4112   CORRECT
+source 10000: reachable nodes = 1957027, largest distance = 53013
+   sequential delta-stepping : 141.174 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 135.273 ms   (136.368 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.04362   buckets = 525, light-edge launches = 3433, all kernel launches = 4484   CORRECT
+source 50000: reachable nodes = 1957027, largest distance = 53396
+   sequential delta-stepping : 140.092 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 137.432 ms   (139.183 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.01936   buckets = 529, light-edge launches = 3492, all kernel launches = 4551   CORRECT
+source 100000: reachable nodes = 1957027, largest distance = 59338
+   sequential delta-stepping : 142.294 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 150.23 ms   (151.326 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 0.947174   buckets = 588, light-edge launches = 3812, all kernel launches = 4989   CORRECT
+
+ALL SOURCES CORRECT
+===== effect of the bucket width delta =====
+--- delta = 200
+   sequential delta-stepping : 125.393 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 86.281 ms   (87.388 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.45331   buckets = 245, light-edge launches = 2238, all kernel launches = 2729   CORRECT
+   sequential delta-stepping : 125.313 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 86.289 ms   (88.119 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.45225   buckets = 250, light-edge launches = 2280, all kernel launches = 2781   CORRECT
+   sequential delta-stepping : 128.309 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 83.315 ms   (84.425 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.54005   buckets = 243, light-edge launches = 2207, all kernel launches = 2694   CORRECT
+   sequential delta-stepping : 125.082 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 90.93 ms   (92.036 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.37559   buckets = 266, light-edge launches = 2427, all kernel launches = 2960   CORRECT
+   sequential delta-stepping : 123.951 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 91.363 ms   (92.47 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.35669   buckets = 267, light-edge launches = 2446, all kernel launches = 2981   CORRECT
+   sequential delta-stepping : 123.595 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 100.249 ms   (101.355 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 1.23288   buckets = 297, light-edge launches = 2679, all kernel launches = 3274   CORRECT
+ALL SOURCES CORRECT
+--- delta = 1000
+   sequential delta-stepping : 137.999 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 44.1 ms   (45.188 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 3.12923   buckets = 49, light-edge launches = 1225, all kernel launches = 1324   CORRECT
+   sequential delta-stepping : 137.926 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 43.851 ms   (45.647 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 3.14533   buckets = 50, light-edge launches = 1266, all kernel launches = 1367   CORRECT
+   sequential delta-stepping : 140.392 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 42.015 ms   (43.103 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 3.34147   buckets = 49, light-edge launches = 1221, all kernel launches = 1320   CORRECT
+   sequential delta-stepping : 137.796 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 45.888 ms   (46.977 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 3.00288   buckets = 54, light-edge launches = 1338, all kernel launches = 1447   CORRECT
+   sequential delta-stepping : 136.594 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 45.004 ms   (46.094 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 3.03515   buckets = 54, light-edge launches = 1336, all kernel launches = 1445   CORRECT
+   sequential delta-stepping : 136.647 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 50.003 ms   (51.829 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 2.73278   buckets = 60, light-edge launches = 1473, all kernel launches = 1594   CORRECT
+ALL SOURCES CORRECT
+--- delta = 5000
+   sequential delta-stepping : 230.901 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 33.675 ms   (34.8 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 6.85675   buckets = 10, light-edge launches = 878, all kernel launches = 899   CORRECT
+   sequential delta-stepping : 225.296 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 32.338 ms   (34.188 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 6.96691   buckets = 10, light-edge launches = 897, all kernel launches = 918   CORRECT
+   sequential delta-stepping : 230.034 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 31.902 ms   (33.019 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 7.21065   buckets = 10, light-edge launches = 894, all kernel launches = 915   CORRECT
+   sequential delta-stepping : 231.777 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 34.208 ms   (35.326 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 6.77552   buckets = 11, light-edge launches = 955, all kernel launches = 978   CORRECT
+   sequential delta-stepping : 225.913 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 32.893 ms   (34.009 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 6.86812   buckets = 11, light-edge launches = 944, all kernel launches = 967   CORRECT
+   sequential delta-stepping : 218.729 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 36.78 ms   (37.896 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 5.94695   buckets = 12, light-edge launches = 1047, all kernel launches = 1072   CORRECT
+ALL SOURCES CORRECT
+--- delta = 20000
+   sequential delta-stepping : 631.566 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 34.448 ms   (36.195 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 18.3339   buckets = 3, light-edge launches = 772, all kernel launches = 779   CORRECT
+   sequential delta-stepping : 547.044 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 31.182 ms   (32.272 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 17.5436   buckets = 3, light-edge launches = 758, all kernel launches = 765   CORRECT
+   sequential delta-stepping : 645.891 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 32.09 ms   (33.186 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 20.1275   buckets = 3, light-edge launches = 768, all kernel launches = 775   CORRECT
+   sequential delta-stepping : 628.733 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 32.846 ms   (34.676 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 19.1418   buckets = 3, light-edge launches = 790, all kernel launches = 797   CORRECT
+   sequential delta-stepping : 529.329 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 30.615 ms   (31.705 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 17.2899   buckets = 3, light-edge launches = 785, all kernel launches = 792   CORRECT
+   sequential delta-stepping : 674.1 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 34.872 ms   (36.729 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 19.3307   buckets = 3, light-edge launches = 868, all kernel launches = 875   CORRECT
+ALL SOURCES CORRECT
+--- delta = 100000
+   sequential delta-stepping : 1406.31 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 35.829 ms   (37.662 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 39.2506   buckets = 1, light-edge launches = 682, all kernel launches = 685   CORRECT
+   sequential delta-stepping : 1244.7 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 33.844 ms   (35.662 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 36.7774   buckets = 1, light-edge launches = 682, all kernel launches = 685   CORRECT
+   sequential delta-stepping : 1408.57 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 33.478 ms   (35.314 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 42.0745   buckets = 1, light-edge launches = 670, all kernel launches = 673   CORRECT
+   sequential delta-stepping : 1533.77 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 36.426 ms   (37.516 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 42.1064   buckets = 1, light-edge launches = 724, all kernel launches = 727   CORRECT
+   sequential delta-stepping : 1460.12 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 36.023 ms   (37.853 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 40.5329   buckets = 1, light-edge launches = 721, all kernel launches = 724   CORRECT
+   sequential delta-stepping : 1739.48 ms   (nodes differing from Dijkstra: 0)
+   GPU delta-stepping        : 40.109 ms   (41.949 ms with the result copied back; nodes differing from Dijkstra: 0)
+   speedup = 43.3689   buckets = 1, light-edge launches = 822, all kernel launches = 825   CORRECT
+ALL SOURCES CORRECT

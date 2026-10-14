@@ -1,0 +1,24 @@
+Generating SQLite file output/profile_delta0.sqlite from output/profile_delta0.nsys-rep
+Processing [output/profile_delta0.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+56.3,35855829,3192,11233.0,11008.0,8000,19296,2643.0,"lightEdgesKernel(int *, int *, int *, const int *, const int *, const int *, const int *, int, int, int, int *)"
+34.2,21754994,483,45041.4,48672.0,27552,51617,5981.5,"nextBucketKernel(const int *, int, int *)"
+9.5,6046488,483,12518.6,13184.0,7712,15040,1752.2,"heavyEdgesKernel(int *, int *, const int *, const int *, const int *, const int *, const int *, int, int, int)"
+0.0,14784,1,14784.0,14784.0,14784,14784,0.0,"distanceInitialization(int *, int *, int *, int, int)"
+
+Processing [output/profile_delta0.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+44.6,124090453,8,15511306.6,70395.5,61490,123570692,43662587.3,cudaMalloc
+43.7,121614964,4163,29213.3,22580.0,12850,1759554,42536.3,cudaMemcpy
+7.8,21746899,4159,5228.9,4430.0,4210,2862975,44329.8,cudaLaunchKernel
+3.5,9803601,3192,3071.3,2980.0,2850,16340,637.7,cudaMemset
+0.3,830021,8,103752.6,73245.5,64840,304990,81893.1,cudaFree
+0.0,43990,2,21995.0,21995.0,6560,37430,21828.4,cudaDeviceSynchronize
+0.0,2030,1,2030.0,2030.0,2030,2030,0.0,cuModuleGetLoadingMode
+
+Processing [output/profile_delta0.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+44.5,6826719,3676,1857.1,1696.0,1664,521315,8570.2,[CUDA memcpy Device-to-Host]
+33.2,5097083,487,10466.3,1024.0,992,1685641,111146.2,[CUDA memcpy Host-to-Device]
+22.3,3426801,3192,1073.6,1120.0,992,1153,52.1,[CUDA memset]
+

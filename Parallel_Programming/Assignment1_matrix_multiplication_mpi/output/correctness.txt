@@ -1,0 +1,12 @@
+N=6400 p=16 cannon: identical to sequential
+N=6400 p=16 summa: identical to sequential
+N=6400 p=64 cannon: identical to sequential
+N=6400 p=64 summa: identical to sequential
+N=12800 p=16 cannon: identical to sequential
+N=12800 p=16 summa: identical to sequential
+N=12800 p=64 cannon: identical to sequential
+N=12800 p=64 summa: identical to sequential
+N=25600 p=16 cannon: identical to sequential
+N=25600 p=16 summa: identical to sequential
+N=25600 p=64 cannon: identical to sequential
+N=25600 p=64 summa: identical to sequential

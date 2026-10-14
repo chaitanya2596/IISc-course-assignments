@@ -1,0 +1,58 @@
+--- n = 5
+Q1   OK n=5 nonzeros=15
+Q2a  OK n=5
+Q2b  OK n=5 block=32
+Q2c  OK n=5 nonzeros A=10 B=9
+Q3   OK n=5 triangles=3 distinct patterns=3 (map and vector results both checked)
+--- n = 10
+Q1   OK n=10 nonzeros=57
+Q2a  OK n=10
+Q2b  OK n=10 block=32
+Q2c  OK n=10 nonzeros A=45 B=31
+Q3   OK n=10 triangles=69 distinct patterns=63 (map and vector results both checked)
+--- n = 20
+Q1   OK n=20 nonzeros=236
+Q2a  OK n=20
+Q2b  OK n=20 block=32
+Q2c  OK n=20 nonzeros A=171 B=151
+Q3   OK n=20 triangles=567 distinct patterns=378 (map and vector results both checked)
+--- n = 50
+Q1   OK n=50 nonzeros=1538
+Q2a  OK n=50
+Q2b  OK n=50 block=32
+Q2c  OK n=50 nonzeros A=961 B=950
+Q3   OK n=50 triangles=11901 distinct patterns=729 (map and vector results both checked)
+--- n = 100
+Q1   OK n=100 nonzeros=6240
+Q2a  OK n=100
+Q2b  OK n=100 block=32
+Q2c  OK n=100 nonzeros A=3996 B=4005
+Q3   OK n=100 triangles=88362 distinct patterns=729 (map and vector results both checked)
+--- n = 200
+Q1   OK n=200 nonzeros=25216
+Q2a  OK n=200
+Q2b  OK n=200 block=32
+Q2c  OK n=200 nonzeros A=16061 B=16106
+Q3   OK n=200 triangles=735507 distinct patterns=729 (map and vector results both checked)
+--- n = 400
+Q1   OK n=400 nonzeros=100837
+Q2a  OK n=400
+Q2b  OK n=400 block=32
+Q2c  OK n=400 nonzeros A=63823 B=63908
+Q3   OK n=400 triangles=5816154 distinct patterns=729 (map and vector results both checked)
+--- n = 800
+Q1   OK n=800 nonzeros=403111
+Q2a  OK n=800
+Q2b  OK n=800 block=32
+Q2c  OK n=800 nonzeros A=256100 B=255492
+Q3   OK n=800 triangles=46533381 distinct patterns=729 (map and vector results both checked)
+
+n,Q1_dense_to_csr_ns,Q2a_dense_mult_ns,Q2b_block_mult_ns,Q2c_sparse_mult_ns,Q3_map_ns,Q3_vector_ns
+5,3000,1000,1000,2000,4000,3000
+10,2000,1000,2000,3000,24000,24000
+20,5000,6000,7000,7000,149000,452000
+50,17000,91000,95000,38000,1.907e+06,2.1035e+07
+100,62000,795000,747000,218000,1.2808e+07,1.3963e+08
+200,248000,6.206e+06,5.973e+06,1.397e+06,1.0376e+08,1.18316e+09
+400,1.016e+06,5.9878e+07,4.7816e+07,9.407e+06,7.99814e+08,9.16909e+09
+800,3.828e+06,5.19964e+08,3.75081e+08,7.0625e+07,6.27634e+09,8.17574e+10

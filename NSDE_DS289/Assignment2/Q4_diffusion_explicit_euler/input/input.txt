@@ -1,0 +1,8 @@
+#rd 
+0.1666667
+#grid size
+32
+#alpha
+1.5
+#end time 
+0.4

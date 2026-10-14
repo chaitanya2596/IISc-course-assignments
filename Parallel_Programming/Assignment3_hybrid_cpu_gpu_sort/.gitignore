@@ -1,0 +1,5 @@
+hybrid_sort
+cpu_sort
+*.o
+output/slurm_*
+output/profile_[0-9]*

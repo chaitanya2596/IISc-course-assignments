@@ -1,0 +1,63 @@
+nvcc -O3 -c src/mergeGpu.cu -o mergeGpu.o
+mpic++ -std=c++11 -O3 -DUSE_GPU -o hybrid_sort src/main.cpp src/distributionCalc.cpp src/mergeAlgo.cpp mergeGpu.o -L/opt/ohpc/pub/apps/cuda-12.8/bin/../lib64 -lcudart -Wl,-rpath,/opt/ohpc/pub/apps/cuda-12.8/bin/../lib64
+Tesla V100-SXM2-32GB, 32768 MiB
+===== small correctness runs =====
+mode = cpu, processes = 4, elements = 1000003 (0.00400001 GB)
+elements per CPU process = 250001
+local sort (slowest process): 0.0167612 s   [slowest CPU process 0.0167612 s]
+parallel merge              : 0.00896165 s
+total sort time             : 0.0257311 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+mode = hybrid, processes = 4, elements = 1000003 (0.00400001 GB)
+elements per CPU process = 233335, elements on the GPU process = 300000 (GPU capacity used for the split = 300000, array / capacity = 3.33334)
+local sort (slowest process): 0.176737 s   [slowest CPU process 0.0159622 s, GPU process 0.176733 s]
+parallel merge              : 0.00985123 s
+total sort time             : 0.186604 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+mode = hybrid, processes = 7, elements = 5000011 (0.02 GB)
+elements per CPU process = 633334, elements on the GPU process = 1200007 (GPU capacity used for the split = 1200007, array / capacity = 4.16665)
+local sort (slowest process): 0.0483315 s   [slowest CPU process 0.0483315 s, GPU process 0.020477 s]
+parallel merge              : 0.0497281 s
+total sort time             : 0.0980735 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+===== CPU only, 32 processes =====
+mode = cpu, processes = 32, elements = 2000000000 (8 GB)
+elements per CPU process = 62500000
+local sort (slowest process): 7.11509 s   [slowest CPU process 7.11509 s]
+parallel merge              : 22.1159 s
+total sort time             : 29.2311 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+===== hybrid: 31 CPU processes + 1 GPU process, different GPU shares =====
+mode = hybrid, processes = 32, elements = 2000000000 (8 GB)
+elements per CPU process = 57142858, elements on the GPU process = 228571428 (GPU capacity used for the split = 500000000, array / capacity = 4)
+local sort (slowest process): 6.53686 s   [slowest CPU process 6.53686 s, GPU process 5.604 s]
+parallel merge              : 24.7047 s
+total sort time             : 31.2417 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+mode = hybrid, processes = 32, elements = 2000000000 (8 GB)
+elements per CPU process = 51282052, elements on the GPU process = 410256410 (GPU capacity used for the split = 500000000, array / capacity = 4)
+local sort (slowest process): 10.6512 s   [slowest CPU process 5.88638 s, GPU process 10.6512 s]
+parallel merge              : 26.3126 s
+total sort time             : 36.964 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+mode = hybrid, processes = 32, elements = 2000000000 (8 GB)
+elements per CPU process = 48387097, elements on the GPU process = 500000000 (GPU capacity used for the split = 500000000, array / capacity = 4)
+local sort (slowest process): 12.9438 s   [slowest CPU process 5.56546 s, GPU process 12.9438 s]
+parallel merge              : 26.8682 s
+total sort time             : 39.8123 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+mode,processes,n,elements_per_cpu_process,elements_on_gpu,cpu_local_sort_s,gpu_sort_s,merge_s,total_s,correct
+cpu,4,1000003,250001,0,0.0167612,0,0.00896165,0.0257311,yes
+hybrid,4,1000003,233335,300000,0.0159622,0.176733,0.00985123,0.186604,yes
+hybrid,7,5000011,633334,1200007,0.0483315,0.020477,0.0497281,0.0980735,yes
+cpu,32,2000000000,62500000,0,7.11509,0,22.1159,29.2311,yes
+hybrid,32,2000000000,57142858,228571428,6.53686,5.604,24.7047,31.2417,yes
+hybrid,32,2000000000,51282052,410256410,5.88638,10.6512,26.3126,36.964,yes
+hybrid,32,2000000000,48387097,500000000,5.56546,12.9438,26.8682,39.8123,yes

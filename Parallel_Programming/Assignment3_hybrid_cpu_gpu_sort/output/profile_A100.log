@@ -1,0 +1,28 @@
+mode = hybrid, processes = 8, elements = 400000000 (1.6 GB)
+elements per CPU process = 42857143, elements on the GPU process = 100000000 (GPU capacity used for the split = 100000000, array / capacity = 4)
+local sort (slowest process): 5.33211 s   [slowest CPU process 5.33211 s, GPU process 0.48626 s]
+parallel merge              : 4.09048 s
+total sort time             : 9.42291 s
+result: in order, same elements as the input (sum and xor match)  -->  CORRECT
+
+Collecting data...
+Generating '/tmp/nsys-report-8ce9.qdstrm'
+[1/1] [0%                          ] profile_hybrid.nsys-rep[1/1] [0%                          ] profile_hybrid.nsys-rep[1/1] [9%                          ] profile_hybrid.nsys-rep[1/1] [=====29%                    ] profile_hybrid.nsys-rep[1/1] [===========50%              ] profile_hybrid.nsys-rep[1/1] [===========51%              ] profile_hybrid.nsys-rep[1/1] [===========52%              ] profile_hybrid.nsys-rep[1/1] [===========53%              ] profile_hybrid.nsys-rep[1/1] [============54%             ] profile_hybrid.nsys-rep[1/1] [============55%             ] profile_hybrid.nsys-rep[1/1] [============56%             ] profile_hybrid.nsys-rep[1/1] [============57%             ] profile_hybrid.nsys-rep[1/1] [=============58%            ] profile_hybrid.nsys-rep[1/1] [=============59%            ] profile_hybrid.nsys-rep[1/1] [=============60%            ] profile_hybrid.nsys-rep[1/1] [==============61%           ] profile_hybrid.nsys-rep[1/1] [==============62%           ] profile_hybrid.nsys-rep[1/1] [==============63%           ] profile_hybrid.nsys-rep[1/1] [==============64%           ] profile_hybrid.nsys-rep[1/1] [===============65%          ] profile_hybrid.nsys-rep[1/1] [===============66%          ] profile_hybrid.nsys-rep[1/1] [===============67%          ] profile_hybrid.nsys-rep[1/1] [================68%         ] profile_hybrid.nsys-rep[1/1] [================69%         ] profile_hybrid.nsys-rep[1/1] [================70%         ] profile_hybrid.nsys-rep[1/1] [================71%         ] profile_hybrid.nsys-rep[1/1] [=================72%        ] profile_hybrid.nsys-rep[1/1] [=================73%        ] profile_hybrid.nsys-rep[1/1] [=================74%        ] profile_hybrid.nsys-rep[1/1] [==================75%       ] profile_hybrid.nsys-rep[1/1] [==================76%       ] profile_hybrid.nsys-rep[1/1] [==================77%       ] profile_hybrid.nsys-rep[1/1] [==================78%       ] profile_hybrid.nsys-rep[1/1] [===================79%      ] profile_hybrid.nsys-rep[1/1] [===================80%      ] profile_hybrid.nsys-rep[1/1] [===================81%      ] profile_hybrid.nsys-rep[1/1] [===================82%      ] profile_hybrid.nsys-rep[1/1] [====================83%     ] profile_hybrid.nsys-rep[1/1] [====================84%     ] profile_hybrid.nsys-rep[1/1] [====================85%     ] profile_hybrid.nsys-rep[1/1] [=====================86%    ] profile_hybrid.nsys-rep[1/1] [=====================87%    ] profile_hybrid.nsys-rep[1/1] [=====================88%    ] profile_hybrid.nsys-rep[1/1] [=====================89%    ] profile_hybrid.nsys-rep[1/1] [======================90%   ] profile_hybrid.nsys-rep[1/1] [======================91%   ] profile_hybrid.nsys-rep[1/1] [======================92%   ] profile_hybrid.nsys-rep[1/1] [=======================93%  ] profile_hybrid.nsys-rep[1/1] [=======================94%  ] profile_hybrid.nsys-rep[1/1] [=======================95%  ] profile_hybrid.nsys-rep[1/1] [=======================96%  ] profile_hybrid.nsys-rep[1/1] [========================97% ] profile_hybrid.nsys-rep[1/1] [========================98% ] profile_hybrid.nsys-rep[1/1] [========================99% ] profile_hybrid.nsys-rep[1/1] [========================100%] profile_hybrid.nsys-rep[1/1] [========================100%] profile_hybrid.nsys-rep[1/1] [========================100%] profile_hybrid.nsys-rep
+Generated:
+    /scratch/chaitanyavp/CSR/EulerAMR_Code/CVWork/Assignments/github_repo/Parallel_Programming/Assignment3_hybrid_cpu_gpu_sort/output/profile_hybrid.nsys-rep
+--- output/profile_hybrid_cuda_api_sum.csv
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+36.3,220228656,1,220228656.0,220228656.0,220228656,220228656,0.0,cudaDeviceSynchronize
+28.1,170386987,27,6310629.1,4610.0,4440,170253406,32764294.6,cudaLaunchKernel
+20.0,121440138,1,121440138.0,121440138.0,121440138,121440138,0.0,cudaMemGetInfo
+15.4,93174089,2,46587044.5,46587044.5,43553779,49620310,4289685.2,cudaMemcpy
+0.1,811241,2,405620.5,405620.5,305790,505451,141181.6,cudaFree
+0.1,597162,2,298581.0,298581.0,204221,392941,133445.2,cudaMalloc
+0.0,1820,1,1820.0,1820.0,1820,1820,0.0,cuModuleGetLoadingMode
+--- output/profile_hybrid_cuda_gpu_kern_sum.csv
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+100.0,220346179,27,8160969.6,8986061.0,5006200,9379663,1548515.2,"gpu_mergesort(const int *, int *, long, long)"
+--- output/profile_hybrid_cuda_gpu_mem_time_sum.csv
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+53.2,49288692,1,49288692.0,49288692.0,49288692,49288692,0.0,[CUDA memcpy Host-to-Device]
+46.8,43377303,1,43377303.0,43377303.0,43377303,43377303,0.0,[CUDA memcpy Device-to-Host]

@@ -1,0 +1,72 @@
+make: Nothing to be done for 'all'.
+numbers read: 200000, runs averaged: 5, repetitions per run: 200, cores available: 32
+
+interval 2 (25 bins): sequential 1165.36 us
+   atomic  threads 2: 2104.73 us   speedup 0.553683
+   atomic  threads 4: 5926.49 us   speedup 0.196635
+   atomic  threads 8: 3648.21 us   speedup 0.319433
+   atomic  threads 16: 3755.87 us   speedup 0.310275
+   atomic  threads 32: 5783.08 us   speedup 0.201511
+   critical  threads 2: 8001.9 us   speedup 0.145635
+   critical  threads 4: 30091.6 us   speedup 0.0387269
+   critical  threads 8: 31410.4 us   speedup 0.0371009
+   critical  threads 16: 36899.3 us   speedup 0.0315821
+   critical  threads 32: 44179.3 us   speedup 0.0263779
+   local  threads 2: 577.381 us   speedup 2.01835
+   local  threads 4: 307.902 us   speedup 3.78483
+   local  threads 8: 161.784 us   speedup 7.20316
+   local  threads 16: 73.6741 us   speedup 15.8177
+   local  threads 32: 62.2315 us   speedup 18.7261
+
+interval 5 (10 bins): sequential 1067.71 us
+   atomic  threads 2: 2368.16 us   speedup 0.450858
+   atomic  threads 4: 3063.7 us   speedup 0.348502
+   atomic  threads 8: 3245.66 us   speedup 0.328964
+   atomic  threads 16: 3416.69 us   speedup 0.312497
+   atomic  threads 32: 3400.89 us   speedup 0.313949
+   critical  threads 2: 7127.98 us   speedup 0.149791
+   critical  threads 4: 29355.7 us   speedup 0.0363713
+   critical  threads 8: 33225.1 us   speedup 0.0321355
+   critical  threads 16: 33320.1 us   speedup 0.0320439
+   critical  threads 32: 42754.8 us   speedup 0.0249727
+   local  threads 2: 559.501 us   speedup 1.90832
+   local  threads 4: 299.627 us   speedup 3.56344
+   local  threads 8: 157.654 us   speedup 6.77246
+   local  threads 16: 73.0494 us   speedup 14.6162
+   local  threads 32: 58.3486 us   speedup 18.2987
+
+interval 10 (5 bins): sequential 1015.36 us
+   atomic  threads 2: 2361.16 us   speedup 0.430025
+   atomic  threads 4: 2878.9 us   speedup 0.352689
+   atomic  threads 8: 3248.46 us   speedup 0.312566
+   atomic  threads 16: 3173.75 us   speedup 0.319924
+   atomic  threads 32: 3325.22 us   speedup 0.30535
+   critical  threads 2: 7567.8 us   speedup 0.134168
+   critical  threads 4: 25536.9 us   speedup 0.0397604
+   critical  threads 8: 31572.7 us   speedup 0.0321593
+   critical  threads 16: 33211.7 us   speedup 0.0305723
+   critical  threads 32: 43004.6 us   speedup 0.0236104
+   local  threads 2: 546.875 us   speedup 1.85665
+   local  threads 4: 301.959 us   speedup 3.36257
+   local  threads 8: 154.505 us   speedup 6.57168
+   local  threads 16: 70.3099 us   speedup 14.4412
+   local  threads 32: 56.8789 us   speedup 17.8512
+
+interval 25 (2 bins): sequential 991.559 us
+   atomic  threads 2: 2384.17 us   speedup 0.415893
+   atomic  threads 4: 3029.92 us   speedup 0.327255
+   atomic  threads 8: 3426.71 us   speedup 0.289362
+   atomic  threads 16: 3219.96 us   speedup 0.307942
+   atomic  threads 32: 3462.95 us   speedup 0.286334
+   critical  threads 2: 7523.81 us   speedup 0.131789
+   critical  threads 4: 25303.7 us   speedup 0.0391863
+   critical  threads 8: 30202.3 us   speedup 0.0328306
+   critical  threads 16: 33101.6 us   speedup 0.029955
+   critical  threads 32: 43154.1 us   speedup 0.0229772
+   local  threads 2: 534.254 us   speedup 1.85597
+   local  threads 4: 287.906 us   speedup 3.44404
+   local  threads 8: 155.695 us   speedup 6.36859
+   local  threads 16: 68.587 us   speedup 14.457
+   local  threads 32: 57.06 us   speedup 17.3775
+
+Serial and parallel solutions match

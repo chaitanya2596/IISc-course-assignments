@@ -1,0 +1,5 @@
+histogram
+mergesort
+inputGenerator
+output/slurm_*
+output/parallel_sorted_array.txt

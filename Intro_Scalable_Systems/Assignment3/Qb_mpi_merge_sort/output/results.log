@@ -1,0 +1,37 @@
+make: Nothing to be done for 'all'.
+processes = 1, elements = 100000, runs averaged = 5
+sequential quick sort           : 12.5386 ms
+parallel merge sort (tree)      : 7.82255 ms   speedup 1.60288
+parallel merge sort (process 0) : 7.80231 ms   speedup 1.60704
+Correctness of Program is verified!!
+
+processes = 8, elements = 100000, runs averaged = 5
+sequential quick sort           : 12.7222 ms
+parallel merge sort (tree)      : 1.83469 ms   speedup 6.93425
+parallel merge sort (process 0) : 2.4959 ms   speedup 5.09723
+Correctness of Program is verified!!
+
+processes = 16, elements = 100000, runs averaged = 5
+sequential quick sort           : 12.5412 ms
+parallel merge sort (tree)      : 1.52451 ms   speedup 8.22635
+parallel merge sort (process 0) : 2.58951 ms   speedup 4.84307
+Correctness of Program is verified!!
+
+processes = 32, elements = 100000, runs averaged = 5
+sequential quick sort           : 12.5222 ms
+parallel merge sort (tree)      : 1.47348 ms   speedup 8.49837
+parallel merge sort (process 0) : 3.0234 ms   speedup 4.14176
+Correctness of Program is verified!!
+
+processes = 64, elements = 100000, runs averaged = 5
+sequential quick sort           : 12.5673 ms
+parallel merge sort (tree)      : 5.44133 ms   speedup 2.3096
+parallel merge sort (process 0) : 5.93117 ms   speedup 2.11886
+Correctness of Program is verified!!
+
+processes,elements,quicksort_ms,tree_ms,tree_speedup,process0_ms,process0_speedup,correct
+1,100000,12.5386,7.82255,1.60288,7.80231,1.60704,yes
+8,100000,12.7222,1.83469,6.93425,2.4959,5.09723,yes
+16,100000,12.5412,1.52451,8.22635,2.58951,4.84307,yes
+32,100000,12.5222,1.47348,8.49837,3.0234,4.14176,yes
+64,100000,12.5673,5.44133,2.3096,5.93117,2.11886,yes

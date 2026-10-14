@@ -1,0 +1,6 @@
+#mass m =
+20
+#spring stiffness  K = 
+20
+#Damping coeff C = 
+5

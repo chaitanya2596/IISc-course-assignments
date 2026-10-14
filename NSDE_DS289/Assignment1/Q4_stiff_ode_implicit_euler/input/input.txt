@@ -1,0 +1,11 @@
+#starting time
+0
+#end time
+2
+#step size
+0.1
+#initial value i.e. @x = 0, y = 
+0
+#Scheme code ( 0 -> Eulers Scheme, 1 -> RungeKutta Scheme, 2 -> Adams Bashforth 3 -> Euler Implicit)
+#for this particular code only 3 is working with respect to given fucntion.
+3

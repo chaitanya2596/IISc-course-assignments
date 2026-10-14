@@ -1,0 +1,10 @@
+#starting time
+0
+#end time
+2
+#step size
+0.5
+#initial value i.e. @t = 0, y = 
+1
+#Scheme code ( 0 -> Eulers Scheme, 1 -> RungeKutta Scheme, 2 -> Adams Bashforth )
+2

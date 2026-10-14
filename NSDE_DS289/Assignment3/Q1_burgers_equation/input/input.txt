@@ -1,0 +1,10 @@
+#delta t 
+0.0004
+#grid size
+64
+#alpha
+0
+#end time
+0.075
+#Scheme  ( 0 --> Euler and Upwind Scheme, 1 --> Euler and CD2 Scheme, 2 --> Euler and non-conservative Upwind )
+0

@@ -1,0 +1,44 @@
+make: Nothing to be done for 'all'.
+sequential  N = 6400  read 0.0782 s  compute 77.7388 s  write 1.82046 s  total 79.6374 s
+cannon  N = 6400  processes = 16  read 3.24183 s  compute 4.49462 s  write 2.31282 s  total 10.0493 s
+N=6400 p=16 cannon: identical to sequential
+summa  N = 6400  processes = 16  read 3.07266 s  compute 4.49707 s  write 2.3452 s  total 9.91493 s
+N=6400 p=16 summa: identical to sequential
+cannon  N = 6400  processes = 64  read 3.43549 s  compute 2.58602 s  write 2.64635 s  total 8.66786 s
+N=6400 p=64 cannon: identical to sequential
+summa  N = 6400  processes = 64  read 3.27601 s  compute 5.48897 s  write 2.69341 s  total 11.4584 s
+N=6400 p=64 summa: identical to sequential
+sequential  N = 12800  read 0.257207 s  compute 637.873 s  write 11.7097 s  total 649.84 s
+cannon  N = 12800  processes = 16  read 12.6985 s  compute 35.6171 s  write 8.53097 s  total 56.8466 s
+N=12800 p=16 cannon: identical to sequential
+summa  N = 12800  processes = 16  read 12.915 s  compute 35.6047 s  write 7.70938 s  total 56.2291 s
+N=12800 p=16 summa: identical to sequential
+cannon  N = 12800  processes = 64  read 12.4872 s  compute 14.603 s  write 9.51777 s  total 36.608 s
+N=12800 p=64 cannon: identical to sequential
+summa  N = 12800  processes = 64  read 12.4743 s  compute 24.0917 s  write 9.40903 s  total 45.975 s
+N=12800 p=64 summa: identical to sequential
+sequential  N = 25600  read 0.961037 s  compute 5479.1 s  write 25.7226 s  total 5505.78 s
+cannon  N = 25600  processes = 16  read 51.7025 s  compute 297.819 s  write 43.0603 s  total 392.582 s
+N=25600 p=16 cannon: identical to sequential
+summa  N = 25600  processes = 16  read 49.6591 s  compute 293.29 s  write 45.1877 s  total 388.137 s
+N=25600 p=16 summa: identical to sequential
+cannon  N = 25600  processes = 64  read 48.7941 s  compute 93.4901 s  write 36.477 s  total 178.761 s
+N=25600 p=64 cannon: identical to sequential
+summa  N = 25600  processes = 64  read 49.9246 s  compute 126.25 s  write 36.8369 s  total 213.011 s
+N=25600 p=64 summa: identical to sequential
+algorithm,N,processes,compute_s,compute_speedup,efficiency,total_s,total_speedup
+sequential,6400,1,77.739,1.00,1.00,79.637,1.00
+cannon,6400,16,4.495,17.30,1.08,10.049,7.92
+summa,6400,16,4.497,17.29,1.08,9.915,8.03
+cannon,6400,64,2.586,30.06,0.47,8.668,9.19
+summa,6400,64,5.489,14.16,0.22,11.458,6.95
+sequential,12800,1,637.873,1.00,1.00,649.840,1.00
+cannon,12800,16,35.617,17.91,1.12,56.847,11.43
+summa,12800,16,35.605,17.92,1.12,56.229,11.56
+cannon,12800,64,14.603,43.68,0.68,36.608,17.75
+summa,12800,64,24.092,26.48,0.41,45.975,14.13
+sequential,25600,1,5479.100,1.00,1.00,5505.784,1.00
+cannon,25600,16,297.819,18.40,1.15,392.582,14.02
+summa,25600,16,293.290,18.68,1.17,388.137,14.19
+cannon,25600,64,93.490,58.61,0.92,178.761,30.80
+summa,25600,64,126.250,43.40,0.68,213.012,25.85

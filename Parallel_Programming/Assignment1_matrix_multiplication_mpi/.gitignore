@@ -1,0 +1,7 @@
+cannon
+summa
+seq_matmul
+Mat_generator
+input/*.bin
+output/*.bin
+output/slurm_*

@@ -1,0 +1,24 @@
+
+NOTICE: Existing SQLite export found: output/profile_hybrid.sqlite
+        It is assumed file was previously exported from: output/profile_hybrid.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [output/profile_hybrid.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+100.0,220346179,27,8160969.6,8986061.0,5006200,9379663,1548515.2,"gpu_mergesort(const int *, int *, long, long)"
+
+Processing [output/profile_hybrid.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+36.3,220228656,1,220228656.0,220228656.0,220228656,220228656,0.0,cudaDeviceSynchronize
+28.1,170386987,27,6310629.1,4610.0,4440,170253406,32764294.6,cudaLaunchKernel
+20.0,121440138,1,121440138.0,121440138.0,121440138,121440138,0.0,cudaMemGetInfo
+15.4,93174089,2,46587044.5,46587044.5,43553779,49620310,4289685.2,cudaMemcpy
+0.1,811241,2,405620.5,405620.5,305790,505451,141181.6,cudaFree
+0.1,597162,2,298581.0,298581.0,204221,392941,133445.2,cudaMalloc
+0.0,1820,1,1820.0,1820.0,1820,1820,0.0,cuModuleGetLoadingMode
+
+Processing [output/profile_hybrid.sqlite] with [/opt/ohpc/pub/apps/cuda-12.8/nsight-systems-2024.6.2/host-linux-x64/reports/cuda_gpu_mem_time_sum.py]... 
+Time (%),Total Time (ns),Count,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Operation
+53.2,49288692,1,49288692.0,49288692.0,49288692,49288692,0.0,[CUDA memcpy Host-to-Device]
+46.8,43377303,1,43377303.0,43377303.0,43377303,43377303,0.0,[CUDA memcpy Device-to-Host]
+

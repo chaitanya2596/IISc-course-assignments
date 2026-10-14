@@ -1,0 +1,10 @@
+#starting time
+0
+#end time
+15
+#step size
+1
+#initial value i.e. @t = 0, X = 
+1
+#initial value i.e. @t = 0, V = 
+0

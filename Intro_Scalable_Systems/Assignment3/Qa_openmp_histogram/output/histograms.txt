@@ -1,0 +1,12 @@
+Histogram for 2 histogram interval
+7964   8052   8085   8080   7918   7920   8117   7891   8033   8025   7948   8062   7977   8001   7974   7923   8048   7906   7988   8014   8182   8029   7990   7827   8046   
+(sum of counts = 200000)
+Histogram for 5 histogram interval
+20064   20035   20006   19980   20065   19897   19844   20035   20235   19839   
+(sum of counts = 200000)
+Histogram for 10 histogram interval
+40099   39986   39962   39879   40074   
+(sum of counts = 200000)
+Histogram for 25 histogram interval
+100150   99850   
+(sum of counts = 200000)
